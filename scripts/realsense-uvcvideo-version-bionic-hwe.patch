@@ -1,0 +1,25 @@
+From aedda427d7283bb76e4e625052271ca571ac74a1 Mon Sep 17 00:00:00 2001
+From: Don Smyth <don@thruwave.com>
+Date: Mon, 16 Dec 2019 12:38:18 -0800
+Subject: [PATCH] Add librealsense version to uvcvideo version string
+
+---
+ drivers/media/usb/uvc/uvcvideo.h | 2 +-
+ 1 file changed, 1 insertion(+), 1 deletion(-)
+
+diff --git a/drivers/media/usb/uvc/uvcvideo.h b/drivers/media/usb/uvc/uvcvideo.h
+index 9b41b14ce076..719d3e20b325 100644
+--- a/drivers/media/usb/uvc/uvcvideo.h
++++ b/drivers/media/usb/uvc/uvcvideo.h
+@@ -170,7 +170,7 @@
+  * Driver specific constants.
+  */
+ 
+-#define DRIVER_VERSION		"1.1.1"
++#define DRIVER_VERSION		"1.1.1-realsense-v2.31.0"
+ 
+ /* Number of isochronous URBs. */
+ #define UVC_URBS		5
+-- 
+2.17.1
+
