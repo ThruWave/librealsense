@@ -1,5 +1,4 @@
 #!/bin/bash
-
 #Break execution on any error received
 set -e
 
@@ -64,6 +63,14 @@ then
 	require_package libelf-dev
 	require_package elfutils
 	#Ubuntu 18.04 kernel 4.18
+	require_package bison
+	require_package flex
+fi
+
+if [ ${ubuntu_codename} == "eoan" ];
+then
+	require_package libelf-dev
+	require_package elfutils
 	require_package bison
 	require_package flex
 fi

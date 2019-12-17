@@ -67,12 +67,8 @@ function choose_kernel_branch {
 			exit 1
 			;;
 		esac
-	else
-		if [ "$2" != "bionic" ];
-		then
-			echo -e "\e[31mUnsupported distribution $2 kernel version $1 . The patches are maintained for Ubuntu16/18 (Xenial/Bionic) with LTS kernels 4-[4,8,10,13,15,18]\e[0m" >&2
-			exit 1
-		fi
+	elif [ "$2" = "bionic" ];
+	then
 		case "${kernel_version[0]}.${kernel_version[1]}" in
 		"4.15")								 	# kernel 4.15 for Ubuntu 18/Bionic Beaver
 			echo master
@@ -92,6 +88,12 @@ function choose_kernel_branch {
 			exit 1
 			;;
 		esac
+	elif [ "$2" = "eoan" ];
+	then
+		echo master
+	else
+		echo -e "\e[31mUnsupported distribution $2 kernel version $1 . The patches are maintained for Ubuntu16/18 (Xenial/Bionic) with LTS kernels 4-[4,8,10,13,15,18]\e[0m" >&2
+		exit 1
 	fi
 }
 
